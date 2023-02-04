@@ -1,0 +1,18 @@
+﻿for testing the distributed cache, need to run the redis server first
+
+steps to follow
+
+1- download redis server from here https://github.com/microsoftarchive/redis/releases/tag/win-3.0.504 
+   or find the Redis-x64-3.0.504.zip in project solution
+2- download and unzip it,
+3- run redis-server.exe
+4- redis-cli.exe
+5- after running the redis-cli.exe, type ping then you will get pong as response
+6- run below command in redis-cli.exe to cache data
+	set myKey "this is data string to be cached"
+7- run the below command in redis-cli.exe to get the cached data
+	get mykey
+
+mykey is not user define key
+	
+
