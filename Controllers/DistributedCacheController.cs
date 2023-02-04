@@ -21,7 +21,6 @@ namespace RedisIntegration.Controllers
     //used as a database cache and message broker. It is really fast key-value based database
     //and even NoSQL database as well. So Redis is a great option for implementing highly available cache.
 
-
     [Route("api/[controller]")]
     [ApiController]
     public class DistributedCacheController : ControllerBase
@@ -62,5 +61,8 @@ namespace RedisIntegration.Controllers
 
             return Ok(orderItems);
         }
+
+
+
     }
 }
