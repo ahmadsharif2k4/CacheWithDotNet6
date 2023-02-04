@@ -51,7 +51,8 @@ namespace RedisIntegration.Controllers
             orderItems = await _context.OrderItems.ToListAsync();
             cachedDataString = JsonSerializer.Serialize(orderItems);
             var dataToCache = Encoding.UTF8.GetBytes(cachedDataString);
-
+            
+            //setting up the expiration of cache
             DistributedCacheEntryOptions options = new DistributedCacheEntryOptions()
                     .SetAbsoluteExpiration(DateTime.Now.AddMinutes(5))
                     .SetSlidingExpiration(TimeSpan.FromMinutes(3));
@@ -61,8 +62,5 @@ namespace RedisIntegration.Controllers
 
             return Ok(orderItems);
         }
-
-
-
     }
 }
